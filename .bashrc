@@ -23,12 +23,6 @@ export MANPATH=/usr/share/man
 shopt -s checkwinsize
 ##################################################
 
-##################################################
-# Development specific environment setup
-export ORACLE_HOME=$HOME/instantclient_12_2
-export ANSIBLE_NOCOWS=1
-##################################################
-
 ################################################
 # Define what your prompt looks like
 # Standard Prompt
