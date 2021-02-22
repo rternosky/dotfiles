@@ -7,6 +7,8 @@ source ~/.git-prompt.sh
 # Setup file creation permissions default as 644
 umask=022
 
+# Create function: [bash] set-tile foo 
+# sets title of current xterm 
 set-title(){
   echo -ne "\033]0;$@\007"
 }
@@ -41,6 +43,8 @@ color_prompt=yes
 # \W = relative path (\w  = absolute path)
 # [01;32m] sets green on \u\h
 # [01;34m] sets blue on \W
+# [01;31m] sets red
+# [03;33m] sets yellow
 if [ "$color_prompt" = yes ]; then
     PS1='${debian_chroot:+($debian_chroot)}[\[\033[01;32m\]\u@LAPTOP\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]$(__git_ps1 " (%s)")]\$ '
 else
@@ -67,12 +71,6 @@ alias tree='tree -C'
 alias oocalc='libreoffice --calc'
 alias oowriter='libreoffice --writer'
 
-# Alias to restart apache
-alias rapache='sudo /etc/init.d/apache2 restart'
-
-# Alias to tail the apache error log file
-alias tap='sudo tail -f /var/log/apache2/error.log'
-
 # Add some color to grep commands. Speed it up by skipping dir names
 # handle common typos
 alias egrep='egrep --color=tty -d skip'
@@ -90,7 +88,7 @@ alias prettyjson='python -m json.tool'
 
 #################################################
 # Path control
-export PATH=/bin:/usr/bin:/usr/X11R6/bin:/usr/local/bin:/sbin:/usr/sbin:/usr/bin/mh
+export PATH=/bin:/usr/bin:/usr/X11R6/bin:/usr/local/bin:/sbin:/usr/sbin
 #################################################
 
 #################################################
